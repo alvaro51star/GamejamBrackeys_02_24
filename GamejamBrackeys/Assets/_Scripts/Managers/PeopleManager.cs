@@ -8,13 +8,12 @@ public class PeopleManager : MonoBehaviour
     [SerializeField] private List<PersonDataSO> GoodPeopleList;
     [SerializeField] private List<PersonDataSO> BadPeopleList;
 
-    //?He pensado que lo que se puede hacer para que no se repitan las personas literalmente se podrian borrar y listo, ya que no se va a usar en un dia siguiente ni nada asi
-
     private void Awake()
     {
         instance = this;
     }
 
+    /// <summary>Return the next person to be at the door depending on the type it recieves</summary>
     public PersonDataSO NextPersonInLine(PeopleType peopleType)
     {
         PersonDataSO personData;
