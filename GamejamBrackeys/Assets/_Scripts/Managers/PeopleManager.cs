@@ -18,7 +18,7 @@ public class PeopleManager : MonoBehaviour
     public PersonDataSO NextPersonInLine(PeopleType peopleType)
     {
         PersonDataSO personData;
-        int index = 0;
+        int index;
         if (peopleType == PeopleType.Good)
         {
             index = Random.Range(0, GoodPeopleList.Count);
