@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PersonData",menuName = "GamejamProject/PersonData")]
+[System.Serializable]
 public class PersonDataSO : ScriptableObject
 {
+    public string _name; //Si esto sobra se quita porque no me quedo claro si lo hacia miriam o no, preguntar después
     //!JSON que no se de donde viene
     public Sprite _sprite;
     public AudioClip _textAudioClip;
