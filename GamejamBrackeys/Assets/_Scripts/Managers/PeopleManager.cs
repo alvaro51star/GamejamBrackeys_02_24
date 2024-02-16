@@ -34,6 +34,7 @@ public class PeopleManager : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public enum PeopleType
 {
     Good,
