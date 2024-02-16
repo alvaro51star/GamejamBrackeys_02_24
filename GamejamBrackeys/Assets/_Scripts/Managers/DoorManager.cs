@@ -67,19 +67,23 @@ public class DoorManager : MonoBehaviour
         personAtTheDoor = null;
         yield return null;
     }
-    
+
     /// <summary>Reproduce feedbacks al abrir la puerta</summary>
-    public void OpenDoorFeedbacks()
+    public IEnumerator OpenDoorFeedbacks()
     {
         //TODO Reproducir audio
         doorView.transform.DOMove(finalDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
+        yield return null;
     }
 
     /// <summary>Reproduce feedbacks al cerrar la puerta</summary>
-    public void CloseDoorFeedbacks()
+    public IEnumerator CloseDoorFeedbacks()
     {
         //TODO reproducir audio
         doorView.transform.DOMove(initialDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
+        yield return new WaitForSeconds(0.5f);
+        //Aqui tambien va audio de pasos cuando se va
+        doorLight.SetActive(false);
     }
 
     private void GeneratePeople()
@@ -100,7 +104,31 @@ public class DoorManager : MonoBehaviour
         Randomizer.Randomize(peopleTypes);
     }
 
+    #region FunctionsToCallInDialogue
 
+    public void EndDialogue(bool isAccepted)
+    {
+        if (isAccepted)
+        {
+            //La puerta se debe abrir dejando pasar al pavo
+            //animacion puerta
+            doorLight.SetActive(false);
+            doorView.transform.position = initialDoorViewPosition.position;
+            Invoke(nameof(SetNewPersonInDoor), 0.5f);
+        }
+        else
+        {
+            StartCoroutine(CloseDoorFeedbacks());
+            Invoke(nameof(SetNewPersonInDoor), 0.5f);
+        }
+    }
+
+    public void StartDialogue()
+    {
+        StartCoroutine(OpenDoorFeedbacks());
+    }
+
+    #endregion
 }
 
 public class Randomizer
