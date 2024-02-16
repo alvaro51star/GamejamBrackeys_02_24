@@ -10,6 +10,7 @@ public class DoorManager : MonoBehaviour
 
     public PersonDataSO personAtTheDoor;
     public int badPeople = 0;
+    public bool isAccepted = false;
     [SerializeField] private int peopleNumber = 10;
 
     [SerializeField] private PeopleType[] peopleTypes;
@@ -23,7 +24,7 @@ public class DoorManager : MonoBehaviour
     [Header("Feedback variables")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
-    [SerializeField] private GameObject doorLight, doorView, openingDoor;
+    [SerializeField] private GameObject doorLight, doorView, doorKnob;
     [Space]
     [SerializeField] private Transform initialDoorShadowPosition, finalDoorShadowPosition;
     [Space]
@@ -106,7 +107,7 @@ public class DoorManager : MonoBehaviour
 
     #region FunctionsToCallInDialogue
 
-    public void EndDialogue(bool isAccepted)
+    public void EndDialogue()
     {
         if (isAccepted)
         {
