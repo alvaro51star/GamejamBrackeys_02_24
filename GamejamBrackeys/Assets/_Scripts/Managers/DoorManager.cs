@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.Mathematics;
+using DG.Tweening;
 using UnityEngine;
 using Random = System.Random;
 
@@ -21,6 +19,15 @@ public class DoorManager : MonoBehaviour
 
     [SerializeField] private float secondsToNewPerson = 3f;
 
+    [Space]
+    [Header("Feedback variables")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private GameObject doorLight, doorView, openingDoor;
+    [Space]
+    [SerializeField] private Transform initialDoorShadowPosition, finalDoorShadowPosition;
+    [Space]
+    [SerializeField] private Transform initialDoorViewPosition, finalDoorViewPosition;
 
     private void Awake()
     {
@@ -31,8 +38,6 @@ public class DoorManager : MonoBehaviour
     private void Start()
     {
         GeneratePeople();
-
-
     }
 
     public void SetNewPersonInDoor()
@@ -44,6 +49,37 @@ public class DoorManager : MonoBehaviour
     {
         yield return new WaitForSeconds(secondsToNewPerson);
         personAtTheDoor = PeopleManager.instance.NextPersonInLine(peopleTypes[peopleIndex]);
+        peopleIndex++;
+        //Falta feedback de la puerta cuando se pone una persona
+        audioSource.PlayOneShot(audioClip);
+        yield return new WaitForSeconds(audioClip.length);
+        doorLight.SetActive(true);
+        //Quizas hacer que la puerta este desactivada para interactuar hasta aqui.
+    }
+
+    public void DeletePersonFromDoor()
+    {
+        StartCoroutine(DeletePerson());
+    }
+
+    private IEnumerator DeletePerson()
+    {
+        personAtTheDoor = null;
+        yield return null;
+    }
+    
+    /// <summary>Reproduce feedbacks al abrir la puerta</summary>
+    public void OpenDoorFeedbacks()
+    {
+        //TODO Reproducir audio
+        doorView.transform.DOMove(finalDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
+    }
+
+    /// <summary>Reproduce feedbacks al cerrar la puerta</summary>
+    public void CloseDoorFeedbacks()
+    {
+        //TODO reproducir audio
+        doorView.transform.DOMove(initialDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
     }
 
     private void GeneratePeople()
@@ -63,16 +99,16 @@ public class DoorManager : MonoBehaviour
 
         Randomizer.Randomize(peopleTypes);
     }
+
+
 }
 
 public class Randomizer
 {
+    /// <summary>Randomize an array</summary>
     public static void Randomize<T>(T[] items)
     {
         Random rand = new Random();
-
-        // For each spot in the array, pick
-        // a random item to swap into that spot.
         for (int i = 0; i < items.Length - 1; i++)
         {
             int j = rand.Next(i, items.Length);
