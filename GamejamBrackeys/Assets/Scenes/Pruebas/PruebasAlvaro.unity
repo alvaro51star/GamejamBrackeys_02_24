@@ -595,7 +595,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1601554160}
         m_TargetAssemblyTypeName: DoorManager, Assembly-CSharp
         m_MethodName: EndDialogue
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2239,6 +2239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personAtTheDoor: {fileID: 0}
   badPeople: 4
+  isAccepted: 0
   peopleNumber: 10
   peopleTypes: 
   peopleIndex: 0
@@ -2247,11 +2248,13 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: a11e02818f37fba459cb7353d504fa53, type: 3}
   doorLight: {fileID: 904835618}
   doorView: {fileID: 1606800523}
-  openingDoor: {fileID: 0}
+  doorKnob: {fileID: 1272580220}
   initialDoorShadowPosition: {fileID: 0}
   finalDoorShadowPosition: {fileID: 1606800524}
   initialDoorViewPosition: {fileID: 1087402302}
   finalDoorViewPosition: {fileID: 1704046078}
+  initialDoorKnobPosition: {fileID: 0}
+  finalDoorKnobPosition: {fileID: 0}
 --- !u!4 &1601554161
 Transform:
   m_ObjectHideFlags: 0

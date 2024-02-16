@@ -29,6 +29,8 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private Transform initialDoorShadowPosition, finalDoorShadowPosition;
     [Space]
     [SerializeField] private Transform initialDoorViewPosition, finalDoorViewPosition;
+    [Space]
+    [SerializeField] private Transform initialDoorKnobPosition, finalDoorKnobPosition;
 
     private void Awake()
     {
@@ -69,24 +71,6 @@ public class DoorManager : MonoBehaviour
         yield return null;
     }
 
-    /// <summary>Reproduce feedbacks al abrir la puerta</summary>
-    public IEnumerator OpenDoorFeedbacks()
-    {
-        //TODO Reproducir audio
-        doorView.transform.DOMove(finalDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
-        yield return null;
-    }
-
-    /// <summary>Reproduce feedbacks al cerrar la puerta</summary>
-    public IEnumerator CloseDoorFeedbacks()
-    {
-        //TODO reproducir audio
-        doorView.transform.DOMove(initialDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
-        yield return new WaitForSeconds(0.5f);
-        //Aqui tambien va audio de pasos cuando se va
-        doorLight.SetActive(false);
-    }
-
     private void GeneratePeople()
     {
         for (int i = 0; i < peopleTypes.Length; i++)
@@ -119,14 +103,44 @@ public class DoorManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(CloseDoorFeedbacks());
+            StartCoroutine(CloseDoorViewFeedbacks());
             Invoke(nameof(SetNewPersonInDoor), 0.5f);
         }
     }
 
     public void StartDialogue()
     {
-        StartCoroutine(OpenDoorFeedbacks());
+        StartCoroutine(OpenDoorViewFeedbacks());
+    }
+
+    #endregion
+
+    #region Feedbacks
+
+    /// <summary>Reproduce feedbacks al abrir la puerta para dejar pasar</summary>
+    public IEnumerator OpenDoorViewFeedbacks()
+    {
+        //TODO Reproducir audio
+        doorView.transform.DOMove(finalDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
+        yield return null;
+    }
+
+    /// <summary>Reproduce feedbacks al abrir la mirilla de la puerta</summary>
+    public IEnumerator OpenDoorFeedbacks()
+    { 
+        doorKnob.transform.DORotate(new Vector3(0, 0, 180), 1);
+        //TODO animacion de la puerta cuando se abre
+        yield return null;
+    }
+
+    /// <summary>Reproduce feedbacks al cerrar la puerta</summary>
+    public IEnumerator CloseDoorViewFeedbacks()
+    {
+        //TODO reproducir audio
+        doorView.transform.DOMove(initialDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
+        yield return new WaitForSeconds(0.5f);
+        //Aqui tambien va audio de pasos cuando se va
+        doorLight.SetActive(false);
     }
 
     #endregion
