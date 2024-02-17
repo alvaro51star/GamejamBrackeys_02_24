@@ -2080,7 +2080,7 @@ GameObject:
   m_Layer: 0
   m_Name: Notebook scene
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2133,14 +2133,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.16, y: 1.85}
+    newSize: {x: 2.16, y: 1.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.16, y: 1.85}
   m_EdgeRadius: 0
 --- !u!212 &1093528851
 SpriteRenderer:
@@ -2183,12 +2183,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9716981, g: 0.9511205, b: 0.5087665, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 26a68016f6b8d054e9175bc4c95396a0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.16, y: 1.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2203,11 +2203,11 @@ Transform:
   m_GameObject: {fileID: 1093528848}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16499542, y: 0.050353054, z: -3}
-  m_LocalScale: {x: 0.19878969, y: 0.35211924, z: 1}
+  m_LocalPosition: {x: -5.36, y: -2.49, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1364599268}
+  m_Father: {fileID: 1811507469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1161109821
 GameObject:
@@ -2267,7 +2267,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2287,8 +2287,8 @@ Transform:
   m_GameObject: {fileID: 1161109821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.604, y: 0.409, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3446, y: 1.0951, z: -1}
+  m_LocalScale: {x: 0.6650678, y: 0.24658652, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1224153930}
@@ -2310,7 +2310,7 @@ GameObject:
   m_Layer: 0
   m_Name: Phone scene
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2379,14 +2379,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.28, y: 3.84}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.28, y: 3.84}
   m_EdgeRadius: 0
 --- !u!212 &1224153929
 SpriteRenderer:
@@ -2429,7 +2429,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c6953f694ebb364cac5e1187498fd69, type: 3}
   m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2449,12 +2449,12 @@ Transform:
   m_GameObject: {fileID: 1224153925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16101964, y: 0.050353013, z: -3}
-  m_LocalScale: {x: 0.19878969, y: 0.35211924, z: 1}
+  m_LocalPosition: {x: -4.35, y: 1.16, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1161109823}
-  m_Father: {fileID: 1364599268}
+  m_Father: {fileID: 1811507469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1224153931
 AudioSource:
@@ -2803,12 +2803,10 @@ Transform:
   m_GameObject: {fileID: 1364599267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.16, y: -1.633, z: 0}
-  m_LocalScale: {x: 5.030442, y: 2.8399472, z: 1}
+  m_LocalPosition: {x: -5.2675, y: -2.5933, z: 0}
+  m_LocalScale: {x: 6.50885, y: 2.182854, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1093528852}
-  - {fileID: 1224153930}
+  m_Children: []
   m_Father: {fileID: 1811507469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1364599269
@@ -3285,7 +3283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a7e669e4d29064cb7984d14a8c4b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personAtTheDoor: {fileID: 0}
   badPeople: 4
   isAccepted: 0
   peopleNumber: 10
@@ -3873,6 +3870,8 @@ Transform:
   m_Children:
   - {fileID: 1601554161}
   - {fileID: 1364599268}
+  - {fileID: 1093528852}
+  - {fileID: 1224153930}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876456218
@@ -3919,17 +3918,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b56fd4ed19a3c41b9de5db0eaffaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoodPeopleList:
-  - {fileID: 11400000, guid: 9d3fa2dbde9b0f745bee2302de921d4e, type: 2}
-  - {fileID: 11400000, guid: 97d71940357b3b74d85f0cb3a2c33577, type: 2}
-  - {fileID: 11400000, guid: e2a88bf0c1abf4344a434ae77117f935, type: 2}
-  - {fileID: 11400000, guid: cceda54d17279a943a2fd4f503b46212, type: 2}
-  BadPeopleList:
-  - {fileID: 11400000, guid: 2384bfdd4de71944a9d588ed2af66d71, type: 2}
-  - {fileID: 11400000, guid: f609ee350a5c80d4c82b8cd7ced5984a, type: 2}
-  - {fileID: 11400000, guid: 852a1f6815bd6cd4bbe949455b89128c, type: 2}
-  - {fileID: 11400000, guid: 0c1628a02a1d88c4e9445aa1a3decfeb, type: 2}
-  - {fileID: 11400000, guid: bbdca51317720694db140b3d308a7e59, type: 2}
+  GoodDialogues: []
+  BadDialogues: []
+  PeopleSprites: []
 --- !u!1 &1895690767
 GameObject:
   m_ObjectHideFlags: 0
