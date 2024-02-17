@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZoomInteractiveObject : InteractiveObject
 {
-    [SerializeField] private GameObject m_UIObject;
+    [SerializeField] protected GameObject m_UIObject;
     protected override void Action()
     {
         m_UIObject.SetActive(true);
