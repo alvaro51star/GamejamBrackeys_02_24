@@ -6,5 +6,6 @@ using UnityEngine;
 public static class EventManager
 {
     public static Action PhoneRinging;
-    public static Action Call;    
+    public static Action Call;   
+    public static Action Call2;
 }
