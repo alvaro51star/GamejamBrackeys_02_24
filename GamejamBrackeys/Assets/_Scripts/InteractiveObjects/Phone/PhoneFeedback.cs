@@ -20,6 +20,8 @@ public class PhoneFeedback : MonoBehaviour
         EventManager.PhoneRinging += OnPhoneRinging;
         EventManager.Call += OnCall;
         EventManager.Call2 += OnCall2;
+        EventManager.Resume += OnResume;
+        EventManager.Pause += OnPause;
     }
 
 
@@ -27,6 +29,8 @@ public class PhoneFeedback : MonoBehaviour
     {
         EventManager.PhoneRinging -= OnPhoneRinging;
         EventManager.Call -= OnCall;
+        EventManager.Resume -= OnResume;
+        EventManager.Pause -= OnPause;
     }
 
     private void OnPhoneRinging()
@@ -53,4 +57,19 @@ public class PhoneFeedback : MonoBehaviour
         loopAudioSource.Stop();
     }
 
+    private void OnResume()
+    {
+        if(recievingCall)
+        {
+            loopAudioSource.Play();
+        }
+    }
+
+    private void OnPause()
+    {
+        if(recievingCall)
+        {
+            loopAudioSource.Stop();
+        }
+    }
 }
