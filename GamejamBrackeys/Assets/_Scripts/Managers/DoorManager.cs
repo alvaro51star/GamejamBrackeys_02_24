@@ -8,7 +8,9 @@ public class DoorManager : MonoBehaviour
 {
     public static DoorManager instance;
 
-    public PersonDataSO personAtTheDoor;
+    //public PersonDataSO personAtTheDoor;
+
+    public PersonData personAtTheDoor;
     public int badPeople = 0;
     public bool isAccepted = false;
     [SerializeField] private int peopleNumber = 10;
@@ -56,7 +58,8 @@ public class DoorManager : MonoBehaviour
         //Falta feedback de la puerta cuando se pone una persona
         audioSource.PlayOneShot(audioClip);
         yield return new WaitForSeconds(audioClip.length);
-        doorLight.SetActive(true);
+        EventManager.PhoneRinging?.Invoke();
+        //doorLight.SetActive(true);
         //Quizas hacer que la puerta este desactivada para interactuar hasta aqui.
     }
 

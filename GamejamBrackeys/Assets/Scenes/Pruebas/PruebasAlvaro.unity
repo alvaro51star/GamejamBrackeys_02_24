@@ -2536,7 +2536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a7e669e4d29064cb7984d14a8c4b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personAtTheDoor: {fileID: 0}
   badPeople: 4
   isAccepted: 0
   peopleNumber: 10
@@ -3132,17 +3131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b56fd4ed19a3c41b9de5db0eaffaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoodPeopleList:
-  - {fileID: 11400000, guid: 9d3fa2dbde9b0f745bee2302de921d4e, type: 2}
-  - {fileID: 11400000, guid: 97d71940357b3b74d85f0cb3a2c33577, type: 2}
-  - {fileID: 11400000, guid: e2a88bf0c1abf4344a434ae77117f935, type: 2}
-  - {fileID: 11400000, guid: cceda54d17279a943a2fd4f503b46212, type: 2}
-  BadPeopleList:
-  - {fileID: 11400000, guid: 2384bfdd4de71944a9d588ed2af66d71, type: 2}
-  - {fileID: 11400000, guid: f609ee350a5c80d4c82b8cd7ced5984a, type: 2}
-  - {fileID: 11400000, guid: 852a1f6815bd6cd4bbe949455b89128c, type: 2}
-  - {fileID: 11400000, guid: 0c1628a02a1d88c4e9445aa1a3decfeb, type: 2}
-  - {fileID: 11400000, guid: bbdca51317720694db140b3d308a7e59, type: 2}
+  GoodDialogues: []
+  BadDialogues: []
+  PeopleSprites: []
 --- !u!1 &1895690767
 GameObject:
   m_ObjectHideFlags: 0

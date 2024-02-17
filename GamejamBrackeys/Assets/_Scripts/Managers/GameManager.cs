@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private int maxPeople = 10;
+
     
 }
