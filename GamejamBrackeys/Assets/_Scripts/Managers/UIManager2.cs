@@ -5,6 +5,8 @@ using UnityEngine;
 public class UIManager2 : MonoBehaviour
 {
     public GameObject pauseMenu;
+
+    //pause menu
     public void Resume()
     {
         EventManager.Resume?.Invoke();
@@ -18,5 +20,5 @@ public class UIManager2 : MonoBehaviour
 
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-    }
+    } 
 }
