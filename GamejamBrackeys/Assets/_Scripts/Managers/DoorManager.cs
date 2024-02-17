@@ -100,11 +100,13 @@ public class DoorManager : MonoBehaviour
             doorLight.SetActive(false);
             doorView.transform.position = initialDoorViewPosition.position;
             Invoke(nameof(SetNewPersonInDoor), 0.5f);
+            DeletePersonFromDoor();
         }
         else
         {
             StartCoroutine(CloseDoorViewFeedbacks());
             Invoke(nameof(SetNewPersonInDoor), 0.5f);
+            DeletePersonFromDoor();
         }
     }
 

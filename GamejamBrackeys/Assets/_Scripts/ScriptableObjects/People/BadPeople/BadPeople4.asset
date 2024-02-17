@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BadPeople4
   m_EditorClassIdentifier: 
   _name: BadPeople4
+  _dialogueText: {fileID: 4900000, guid: bbe2622f698d1ec4aa63886209789990, type: 3}
   _sprite: {fileID: 0}
   _textAudioClip: {fileID: 0}
   _dialogueSprite: {fileID: 0}

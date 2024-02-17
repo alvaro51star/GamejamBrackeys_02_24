@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     //Trial
     public TextAsset JSON;
+    [SerializeField] private Button startDialogueButton;
 
 
     private void Awake()
@@ -37,6 +39,16 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        //Test button
+        if (DoorManager.instance.personAtTheDoor == null)
+        {
+            startDialogueButton.enabled = false;
+        }
+        else
+        {
+            startDialogueButton.enabled = true;
+        }
+
         if (!m_dialogueIsPlaying)
             return;
         if (Input.GetKeyDown(KeyCode.Space) && m_numChoices == 0) //cambiar el input
@@ -46,9 +58,11 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode()
     {
-        m_currentStory = new Story(JSON.text);
+        m_currentStory = new Story(DoorManager.instance.personAtTheDoor._dialogueText.text);
         m_dialogueIsPlaying = true;
         UIManager.instance.DialogueSwitchMode(true);
+        //FeedbacksPuerta
+        DoorManager.instance.StartDialogue();
 
         ContinueDialogue();
     }
@@ -123,7 +137,7 @@ public class DialogueManager : MonoBehaviour
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
 
-            switch (tagKey) //switch para en el futuro poner más
+            switch (tagKey) //switch para en el futuro poner mï¿½s
             {
                 case LETTHROUGH_TAG:
                     if (tagValue == "yes")
@@ -134,7 +148,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         DoorManager.instance.isAccepted = false;
                     }
-                        break;
+                    break;
             }
         }
     }
