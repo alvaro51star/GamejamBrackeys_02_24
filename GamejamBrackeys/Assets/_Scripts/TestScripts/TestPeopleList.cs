@@ -8,7 +8,7 @@ public class TestPeopleList : MonoBehaviour
  
     public void GetPerson()
     {
-        person = PeopleManager.instance.NextPersonInLine((PeopleType)Random.Range(0,2));
+        //person = PeopleManager.instance.NextPersonInLine((PeopleType)Random.Range(0,2));
 
         Debug.Log($"Name: {person._name}");
     }
