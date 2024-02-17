@@ -3296,6 +3296,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4423bd1b2ec2c714cb5da428a528ac79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_characterNames:
+  - Mario
+  - Raul
+  - Alvaro
+  - Hugo
   JSON: {fileID: 4900000, guid: bbe2622f698d1ec4aa63886209789990, type: 3}
   startDialogueButton: {fileID: 601042151}
 --- !u!4 &2079567528

@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     private LogManager m_logManager;
     private int m_numChoices;
 
+    [SerializeField] private string[] m_characterNames;
+
     //Constants
     private const string LETTHROUGH_TAG = "pasar";
 
@@ -58,6 +60,10 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode()
     {
+        m_currentStory.BindExternalFunction("getName", () => {
+            return m_characterNames[Random.Range(0, m_characterNames.Length)];
+        });
+
         m_currentStory = new Story(DoorManager.instance.personAtTheDoor._dialogueText.text);
         m_dialogueIsPlaying = true;
         UIManager.instance.DialogueSwitchMode(true);
@@ -78,6 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ExitDialogueMode()
     {
+        m_currentStory.UnbindExternalFunction("getName");
         m_dialogueIsPlaying = false;
         UIManager.instance.DialogueSwitchMode(false);
         UIManager.instance.DialogueChangeText("");
@@ -107,8 +114,6 @@ public class DialogueManager : MonoBehaviour
 
         foreach (Choice choice in currentChoices)
         {
-            //m_choices[index].SetActive(true);
-            //m_choiceTexts[index].text = currentChoices[index].text;
             UIManager.instance.SwitchActiveChoices(true, index);
             UIManager.instance.ChangeChoiceText(currentChoices[index].text, index);
             index++;
@@ -137,7 +142,7 @@ public class DialogueManager : MonoBehaviour
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
 
-            switch (tagKey) //switch para en el futuro poner m�s
+            switch (tagKey) //switch para en el futuro poner mas
             {
                 case LETTHROUGH_TAG:
                     if (tagValue == "yes")
