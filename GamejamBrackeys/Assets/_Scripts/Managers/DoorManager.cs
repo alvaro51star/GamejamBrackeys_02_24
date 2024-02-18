@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class DoorManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class DoorManager : MonoBehaviour
 
     [SerializeField] private int currentPeopleIn = 0;
     [SerializeField] private int badPeopleIn = 0;
+
+    [SerializeField] private GameObject personImage;
 
     //Al principio del dia se genera un array de tipos de persona y eso lo ordeno aleatoriamente al principio
 
@@ -122,6 +125,7 @@ public class DoorManager : MonoBehaviour
             //animacion puerta
             doorLight.SetActive(false);
             doorView.transform.position = initialDoorViewPosition.position;
+            StartCoroutine(ShowPerson());
             Invoke(nameof(SetNewPersonInDoor), 0.5f);
             DeletePersonFromDoor();
         }
@@ -171,6 +175,15 @@ public class DoorManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         //Aqui tambien va audio de pasos cuando se va
         doorLight.SetActive(false);
+    }
+
+    private IEnumerator ShowPerson()
+    {
+        personImage.GetComponent<Image>().sprite = personAtTheDoor._sprite;
+        //Reproducir audio peurta
+        personImage.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        personImage.SetActive(false);
     }
 
     #endregion
