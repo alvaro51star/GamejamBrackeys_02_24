@@ -1438,6 +1438,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &944511205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4721298413353612841, guid: 673051a249609b141a9825dd3552d209, type: 3}
+  m_PrefabInstance: {fileID: 134560465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1079574946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,7 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbebf37e2aafef4fb31780020a98fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 944511205}
   m_dialoguePanel: {fileID: 134560475}
   m_dialogueText: {fileID: 134560474}
   m_logText: {fileID: 134560473}
@@ -2639,6 +2644,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3d4ea37c4045da04cba41eb0a0c55b3f, type: 3}
   - {fileID: 21300000, guid: 4ead404513175704991af1cee587f5f3, type: 3}
   - {fileID: 21300000, guid: 5773f10f26d270e48a0096c1dc8843fa, type: 3}
+  PortraitSprites: []
 --- !u!1 &1909069930
 GameObject:
   m_ObjectHideFlags: 0

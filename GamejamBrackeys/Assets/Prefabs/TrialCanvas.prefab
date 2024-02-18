@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbebf37e2aafef4fb31780020a98fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 3710641050724882820}
+  pauseMenu: {fileID: 4721298413353612841}
   m_dialoguePanel: {fileID: 9123045408441012425}
   m_dialogueText: {fileID: 80730186076704837}
   m_logText: {fileID: 5271318721414494268}
@@ -2584,7 +2584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8314143869743060725
 RectTransform:
   m_ObjectHideFlags: 0

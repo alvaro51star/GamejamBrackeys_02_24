@@ -22,8 +22,6 @@ public class DialogueManager : MonoBehaviour
 
     //Trial
     public TextAsset JSON;
-    [SerializeField] private Button startDialogueButton;
-
 
     private void Awake()
     {
@@ -41,16 +39,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        //Test button
-        if (DoorManager.instance.personAtTheDoor == null)
-        {
-            startDialogueButton.enabled = false;
-        }
-        else
-        {
-            startDialogueButton.enabled = true;
-        }
-
         if (!m_dialogueIsPlaying)
             return;
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return)) && m_numChoices == 0) //cambiar el input
