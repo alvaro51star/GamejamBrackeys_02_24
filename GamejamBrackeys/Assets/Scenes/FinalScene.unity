@@ -2238,12 +2238,13 @@ MonoBehaviour:
   peopleIndex: 0
   currentPeopleIn: 0
   badPeopleIn: 0
+  goodPeopleOut: 0
   personImage: {fileID: 1425997389}
   secondsToNewPerson: 3
   audioSource: {fileID: 1601554162}
   audioClip: {fileID: 8300000, guid: a11e02818f37fba459cb7353d504fa53, type: 3}
-  doorOpen: {fileID: 0}
-  doorClose: {fileID: 0}
+  doorOpen: {fileID: 8300000, guid: dc8a501c963fc084a83a0f55849434ef, type: 3}
+  doorClose: {fileID: 8300000, guid: 797f3e54b6b341848865994c5ec4a7ad, type: 3}
   doorLight: {fileID: 904835618}
   doorView: {fileID: 1606800523}
   doorKnob: {fileID: 1272580220}
@@ -3050,6 +3051,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   badPeopleIn: 0
+  goodPeopleOut: 0
+  totalErrors: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

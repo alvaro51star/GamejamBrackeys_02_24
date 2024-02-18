@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int badPeopleIn = 0;
+    public int goodPeopleOut = 0;
+    public int totalErrors = 0;
     //[SerializeField] private int maxPeople = 10;
 
 
@@ -19,9 +21,16 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(instance);
     }
 
-    public void AddBadPeople()
+    public void AddBadPeopleIn()
     {
         badPeopleIn++;
+        totalErrors++;
+    }
+
+    public void AddGoodPeopleOut()
+    {
+        goodPeopleOut++;
+        totalErrors++;
     }
 
     public void BackToMainMenu()
@@ -29,9 +38,9 @@ public class GameManager : MonoBehaviour
         Initiate.Fade("MainMenu", Color.black, 1f);
     }
 
-    public void GameOver(int numberOfAltersIn)
+    public void GameOver()
     {
-        switch (numberOfAltersIn)
+        switch (totalErrors)
         {
             case 0:
                 Initiate.Fade("0Errors_FinalScene", Color.black, 1f);

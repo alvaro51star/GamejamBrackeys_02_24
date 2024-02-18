@@ -21,6 +21,7 @@ public class DoorManager : MonoBehaviour
 
     [SerializeField] private int currentPeopleIn = 0;
     [SerializeField] private int badPeopleIn = 0;
+    [SerializeField] private int goodPeopleOut = 0;
 
     [SerializeField] private GameObject personImage;
 
@@ -57,7 +58,7 @@ public class DoorManager : MonoBehaviour
     {
         if (currentPeopleIn >= peopleNumber)
         {
-            GameManager.instance.GameOver(badPeopleIn);
+            GameManager.instance.GameOver();
         }
         StartCoroutine(SetNewPerson());
     }
@@ -120,7 +121,7 @@ public class DoorManager : MonoBehaviour
             if (personAtTheDoor._personType == PeopleType.Bad)
             {
                 badPeopleIn++;
-                GameManager.instance.AddBadPeople();
+                GameManager.instance.AddBadPeopleIn();
             }
             //La puerta se debe abrir dejando pasar al pavo
             //animacion puerta
@@ -134,8 +135,8 @@ public class DoorManager : MonoBehaviour
         {
             if (personAtTheDoor._personType == PeopleType.Good)
             {
-                badPeopleIn++;
-                GameManager.instance.AddBadPeople();
+                goodPeopleOut++;
+                GameManager.instance.AddGoodPeopleOut();
             }
             StartCoroutine(CloseDoorViewFeedbacks());
             Invoke(nameof(SetNewPersonInDoor), 0.5f);
@@ -180,11 +181,12 @@ public class DoorManager : MonoBehaviour
 
     private IEnumerator ShowPerson()
     {
-        personImage.GetComponent<Image>().sprite = personAtTheDoor._sprite;
-        //Reproducir audio peurta
+        personImage.GetComponent<SpriteRenderer>().sprite = personAtTheDoor._sprite;
+        audioSource.PlayOneShot(doorOpen);
         personImage.SetActive(true);
         yield return new WaitForSeconds(2f);
         personImage.SetActive(false);
+        audioSource.PlayOneShot(doorClose);
     }
 
     #endregion
