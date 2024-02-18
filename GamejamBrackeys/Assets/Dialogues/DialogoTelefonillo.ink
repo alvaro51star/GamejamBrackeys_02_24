@@ -26,13 +26,13 @@ Is everything alright in there?
 
 ===TriesDialogue===
 {
-    -numberOfTries == 0:
-        The signal is cutting out. I think you're only going to be able to make 2 more calls.#plusTries:1
-        ->END
     -numberOfTries == 1:
-        Signal's getting worse. You only have one call left.#plusTries:1
+        The signal is cutting out. I think you're only going to be able to make 2 more calls.
         ->END
     -numberOfTries == 2:
-        <i>The call was cutt off. It doesn't seem you'll be able to make another call.</i>#plusTries:1
+        Signal's getting worse. You only have one call left.
+        ->END
+    -numberOfTries == 3:
+        <i>The call was cutt off. It doesn't seem you'll be able to make another call.</i>
         ->END
 }

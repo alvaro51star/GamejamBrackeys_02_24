@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     private bool m_dialogueIsPlaying;
     private LogManager m_logManager;
     private int m_numChoices;
+    private bool m_isPuerta;
 
     [SerializeField] private string[] m_characterNames;
 
@@ -57,7 +58,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(bool isPuerta)
     {
-        if (isPuerta)
+        m_isPuerta = isPuerta;
+        if (m_isPuerta)
         {
             m_currentStory = new Story(DoorManager.instance.personAtTheDoor._dialogueText.text);
             DoorManager.instance.StartDialogue();
@@ -90,8 +92,11 @@ public class DialogueManager : MonoBehaviour
         m_dialogueIsPlaying = false;
         UIManager.instance.DialogueSwitchMode(false);
         UIManager.instance.DialogueChangeText("");
-        DoorManager.instance.EndDialogue();
         EventManager.CallEnded?.Invoke();
+        if (m_isPuerta)
+        {
+            DoorManager.instance.EndDialogue();
+        }
     }
 
     private void ContinueDialogue()
@@ -160,9 +165,9 @@ public class DialogueManager : MonoBehaviour
                 case POSTIT_TAG:
                     UIManager.instance.ChangePostItText(tagValue);
                     break;
-                case PLUSTRIES_TAG:
-                    EventManager.Call2?.Invoke();
-                    break;
+                //case PLUSTRIES_TAG:
+                //    EventManager.Call2?.Invoke();
+                //    break;
                 //case SPEAKER_TAG:
 
             }

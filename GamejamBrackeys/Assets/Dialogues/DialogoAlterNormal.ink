@@ -124,7 +124,7 @@ My teeth are too far apart, so when I blow I can't make any noise.
 ->selector
 
 ===P2R1===
-No, I haven't killed anyone yet.  
+No, I haven't killed anyone.  
 ->selector
 ===P2R2===
 ~temp peopleKilled = RANDOM(3, 15)
