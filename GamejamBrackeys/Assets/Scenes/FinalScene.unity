@@ -965,9 +965,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!114 &601042151 stripped
+--- !u!114 &532110028 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7306774162455495524, guid: 673051a249609b141a9825dd3552d209, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7709717826422695639, guid: 673051a249609b141a9825dd3552d209, type: 3}
   m_PrefabInstance: {fileID: 134560465}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2871,7 +2871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_characterNames: []
   JSON: {fileID: 4900000, guid: bbe2622f698d1ec4aa63886209789990, type: 3}
-  startDialogueButton: {fileID: 601042151}
+  startDialogueButton: {fileID: 0}
 --- !u!4 &2079567528
 Transform:
   m_ObjectHideFlags: 0
@@ -2937,7 +2937,7 @@ MonoBehaviour:
   firstPostIt: {fileID: 500247384}
   secondPostIt: {fileID: 703319548}
   thirdPostIt: {fileID: 351068615}
-  line2button: {fileID: 0}
+  line2button: {fileID: 532110028}
 --- !u!1 &2120391984
 GameObject:
   m_ObjectHideFlags: 0
