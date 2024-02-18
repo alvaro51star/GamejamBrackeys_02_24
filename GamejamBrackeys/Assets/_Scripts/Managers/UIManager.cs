@@ -22,6 +22,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject[] m_choices;
     [SerializeField] private TextMeshProUGUI[] m_choiceTexts;
 
+    [Header("PostIt")]
+    [SerializeField] private TMP_Text postItText;
+    private int m_postItCounter;
+
     private void Awake() //set singleton 
     {
         if (instance != null)
@@ -101,6 +105,22 @@ public class UIManager : MonoBehaviour
     }
 
     #endregion   
+
+
+
+    public void ChangePostItText(string text)//llamar en otra parte cuando OnCall2
+    {
+        postItText.text = text;
+    }
+    public int GetPostItCounter()
+    {
+        return m_postItCounter;
+    }
+    public void ChangePostItCounter(int counter)
+    {
+        m_postItCounter = counter;
+    }
+
 
     //pause menu
     public void Resume()
