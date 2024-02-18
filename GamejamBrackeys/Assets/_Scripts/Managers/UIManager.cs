@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     //Variables
     public static UIManager instance;
 
+    [Header("UI GameObjects")]
+    public GameObject pauseMenu;
+
     [Header("Dialogue UI")]
     [SerializeField] private GameObject m_dialoguePanel;
     [SerializeField] private TextMeshProUGUI m_dialogueText;
@@ -97,5 +100,21 @@ public class UIManager : MonoBehaviour
         return m_choices.Length;
     }
 
-    #endregion
+    #endregion   
+
+    //pause menu
+    public void Resume()
+    {
+        EventManager.Resume?.Invoke();
+
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    public void PauseMenu()
+    {
+        EventManager.Pause?.Invoke();
+
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
 }
