@@ -3003,7 +3003,7 @@ MonoBehaviour:
   answerAudioClip: {fileID: 8300000, guid: 7278f4721a5b4f44d86538699e9beeda, type: 3}
   phoneLight: {fileID: 4064958794706885242}
   buttonLight: {fileID: 7335498044113804926}
-  doorButton: {fileID: 0}
+  doorButton: {fileID: 524900724132509199}
 --- !u!1 &6030839700711940190
 GameObject:
   m_ObjectHideFlags: 0
