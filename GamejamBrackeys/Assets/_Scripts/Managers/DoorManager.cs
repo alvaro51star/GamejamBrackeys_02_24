@@ -32,6 +32,7 @@ public class DoorManager : MonoBehaviour
     [Header("Feedback variables")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioClip doorOpen, doorClose;
     [SerializeField] private GameObject doorLight, doorView, doorKnob;
     [Space]
     [SerializeField] private Transform initialDoorShadowPosition, finalDoorShadowPosition;
