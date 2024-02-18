@@ -18,6 +18,9 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private PeopleType[] peopleTypes;
     [SerializeField] private int peopleIndex = 0;
 
+    [SerializeField] private int currentPeopleIn = 0;
+    [SerializeField] private int badPeopleIn = 0;
+
     //Al principio del dia se genera un array de tipos de persona y eso lo ordeno aleatoriamente al principio
 
     [SerializeField] private float secondsToNewPerson = 3f;
@@ -47,6 +50,10 @@ public class DoorManager : MonoBehaviour
 
     public void SetNewPersonInDoor()
     {
+        if (currentPeopleIn >= 10)
+        {
+            GameManager.instance.GameOver(badPeopleIn);
+        }
         StartCoroutine(SetNewPerson());
     }
 
@@ -55,11 +62,12 @@ public class DoorManager : MonoBehaviour
         yield return new WaitForSeconds(secondsToNewPerson);
         personAtTheDoor = PeopleManager.instance.NextPersonInLine(peopleTypes[peopleIndex]);
         peopleIndex++;
+        currentPeopleIn++;
         //Falta feedback de la puerta cuando se pone una persona
         audioSource.PlayOneShot(audioClip);
         yield return new WaitForSeconds(audioClip.length);
         EventManager.PhoneRinging?.Invoke();
-        //doorLight.SetActive(true);
+        doorLight.SetActive(true);
         //Quizas hacer que la puerta este desactivada para interactuar hasta aqui.
     }
 
@@ -98,6 +106,11 @@ public class DoorManager : MonoBehaviour
     {
         if (isAccepted)
         {
+            if (personAtTheDoor._personType == PeopleType.Bad)
+            {
+                badPeopleIn++;
+                GameManager.instance.badPeopleIn = badPeopleIn;
+            }
             //La puerta se debe abrir dejando pasar al pavo
             //animacion puerta
             doorLight.SetActive(false);
@@ -107,6 +120,11 @@ public class DoorManager : MonoBehaviour
         }
         else
         {
+            if (personAtTheDoor._personType == PeopleType.Good)
+            {
+                badPeopleIn++;
+                GameManager.instance.badPeopleIn = badPeopleIn;
+            }
             StartCoroutine(CloseDoorViewFeedbacks());
             Invoke(nameof(SetNewPersonInDoor), 0.5f);
             DeletePersonFromDoor();
@@ -132,7 +150,7 @@ public class DoorManager : MonoBehaviour
 
     /// <summary>Reproduce feedbacks al abrir la mirilla de la puerta</summary>
     public IEnumerator OpenDoorFeedbacks()
-    { 
+    {
         doorKnob.transform.DORotate(new Vector3(0, 0, 180), 1);
         //TODO animacion de la puerta cuando se abre
         yield return null;

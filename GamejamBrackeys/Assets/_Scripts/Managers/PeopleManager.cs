@@ -42,7 +42,7 @@ public class PeopleManager : MonoBehaviour
 
     public PersonData NextPersonInLine(PeopleType peopleType)
     {
-        PersonData personData = null;
+        PersonData personData = new();
         int index;
         if (peopleType == PeopleType.Good)
         {
@@ -52,7 +52,7 @@ public class PeopleManager : MonoBehaviour
             GoodDialogues.RemoveAt(index);
         }
         else
-        {   
+        {
             personData._personType = PeopleType.Bad;
             index = Random.Range(0, BadDialogues.Count);
             personData._dialogueText = BadDialogues[index];
