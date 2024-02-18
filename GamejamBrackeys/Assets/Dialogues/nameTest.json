@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[[["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["ev",{"x()":"getName"},"/ev",{"temp=":"characterName"},"\n",{"->":"main"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"main":["^Cual es tu nombre?","\n","ev",{"VAR?":"characterName"},"out","/ev","\n","^Mi nombre es ","ev",{"VAR?":"characterName"},"out","/ev","\n","end",{"#f":1}],"global decl":["ev","/ev","end",null],"#f":1}],"listDefs":{}}

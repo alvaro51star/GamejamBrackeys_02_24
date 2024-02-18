@@ -481,6 +481,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4613421171023481026, guid: 673051a249609b141a9825dd3552d209, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6893334290283090825, guid: 673051a249609b141a9825dd3552d209, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3309,7 +3313,7 @@ MonoBehaviour:
   - Raul
   - Alvaro
   - Hugo
-  JSON: {fileID: 4900000, guid: bbe2622f698d1ec4aa63886209789990, type: 3}
+  JSON: {fileID: 4900000, guid: 76f6dd2cb7409484780441b530ec73ad, type: 3}
   startDialogueButton: {fileID: 601042151}
 --- !u!4 &2079567528
 Transform:

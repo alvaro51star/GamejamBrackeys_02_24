@@ -60,11 +60,11 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode()
     {
-        m_currentStory.BindExternalFunction("getName", () => {
-            return m_characterNames[Random.Range(0, m_characterNames.Length)];
-        });
 
         m_currentStory = new Story(DoorManager.instance.personAtTheDoor._dialogueText.text);
+        m_currentStory?.BindExternalFunction("getName", () => {
+            return m_characterNames[Random.Range(0, m_characterNames.Length)];
+        });
         m_dialogueIsPlaying = true;
         UIManager.instance.DialogueSwitchMode(true);
         //FeedbacksPuerta
