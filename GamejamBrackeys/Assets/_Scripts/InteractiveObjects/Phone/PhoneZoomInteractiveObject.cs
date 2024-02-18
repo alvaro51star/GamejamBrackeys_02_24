@@ -10,13 +10,13 @@ public class PhoneZoomInteractiveObject : ZoomInteractiveObject
     {
         EventManager.Call += OnCall;
         EventManager.Call2 += OnCall2;
-        EventManager.PhoneRinging += OnPhoneRinging;
+        EventManager.CallEnded += OnCallEnded;
     }
     private void OnDisable()
     {
         EventManager.Call -= OnCall;
         EventManager.Call2 -= OnCall2;
-        EventManager.PhoneRinging -= OnPhoneRinging;
+        EventManager.CallEnded -= OnCallEnded;
     }
 
     private void OnCall()
@@ -29,7 +29,7 @@ public class PhoneZoomInteractiveObject : ZoomInteractiveObject
         isInCall = true;
     }
 
-    private void OnPhoneRinging()
+    private void OnCallEnded()
     {
         isInCall= false;
     }

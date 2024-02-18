@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1012608301614989981}
+  doorButton: {fileID: 0}
 --- !u!1 &1012608301614989981
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3447817127709295506}
+  - component: {fileID: 3495217252998453978}
   m_Layer: 0
   m_Name: PostItZoom
   m_TagString: Untagged
@@ -780,6 +782,19 @@ Transform:
   - {fileID: 7726463509508531462}
   m_Father: {fileID: 6436831064484860701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3495217252998453978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133216769943978995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6efedbe68e7634458b9e382cb342be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postItText: {fileID: 6330693364812066227}
 --- !u!1 &2527181026820973007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitPanel: {fileID: 5915597823881728758}
   answerAudioClip: {fileID: 8300000, guid: 7278f4721a5b4f44d86538699e9beeda, type: 3}
-  phoneLight: {fileID: 0}
+  phoneLight: {fileID: 7520092897265960331}
 --- !u!1 &4425789286446114298
 GameObject:
   m_ObjectHideFlags: 0
