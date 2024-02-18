@@ -23,6 +23,7 @@ public class PostItCounter : MonoBehaviour
     private void OnCall2()
     {
         counter++;
+        UIManager.instance.ChangePostItCounter(counter);
         if(counter == 1)
         {
             firstPostIt.SetActive(true);

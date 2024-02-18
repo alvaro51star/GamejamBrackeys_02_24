@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
 
     //Constants
     private const string LETTHROUGH_TAG = "pasar";
+    private const string POSTIT_TAG = "postIt";
+    private const string PLUSTRIES_TAG = "plusTries";
 
 
     //Trial
@@ -53,6 +55,12 @@ public class DialogueManager : MonoBehaviour
         m_currentStory?.BindExternalFunction("getName", () => {
             return m_characterNames[Random.Range(0, m_characterNames.Length)];
         });
+        m_currentStory?.BindExternalFunction("getNumberOfTries", () => {
+            UIManager.instance.GetPostItCounter();
+        });
+        m_currentStory?.BindExternalFunction("getNumberOfBadGuysInside", () => {
+            return GameManager.instance.badPeopleIn;
+        });
         m_dialogueIsPlaying = true;
         UIManager.instance.DialogueSwitchMode(true);
         //FeedbacksPuerta
@@ -60,15 +68,6 @@ public class DialogueManager : MonoBehaviour
 
         ContinueDialogue();
     }
-
-    //public void EnterDialogueMode(TextAsset inkJSON)
-    //{
-    //    m_currentStory = new Story(inkJSON.text);
-    //    m_dialogueIsPlaying = true;
-    //    UIManager.instance.DialogueSwitchMode(true);
-    //
-    //    ContinueDialogue();
-    //}
 
     public void ExitDialogueMode()
     {
@@ -141,6 +140,13 @@ public class DialogueManager : MonoBehaviour
                     {
                         DoorManager.instance.isAccepted = false;
                     }
+                    break;
+
+                case POSTIT_TAG:
+                    UIManager.instance.ChangePostItText(tagValue);
+                    break;
+                case PLUSTRIES_TAG:
+                    EventManager.Call2?.Invoke();
                     break;
             }
         }
