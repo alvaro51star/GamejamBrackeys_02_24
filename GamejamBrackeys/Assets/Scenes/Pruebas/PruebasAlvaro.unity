@@ -2545,6 +2545,8 @@ MonoBehaviour:
   peopleNumber: 10
   peopleTypes: 
   peopleIndex: 0
+  currentPeopleIn: 0
+  badPeopleIn: 0
   secondsToNewPerson: 3
   audioSource: {fileID: 1601554162}
   audioClip: {fileID: 8300000, guid: a11e02818f37fba459cb7353d504fa53, type: 3}
@@ -3135,8 +3137,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b56fd4ed19a3c41b9de5db0eaffaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoodDialogues: []
-  BadDialogues: []
+  GoodDialogues:
+  - {fileID: 4900000, guid: bb01143b213e3d24585cec0bc1d0669d, type: 3}
+  - {fileID: 4900000, guid: bb01143b213e3d24585cec0bc1d0669d, type: 3}
+  - {fileID: 4900000, guid: bb01143b213e3d24585cec0bc1d0669d, type: 3}
+  BadDialogues:
+  - {fileID: 4900000, guid: bb01143b213e3d24585cec0bc1d0669d, type: 3}
+  - {fileID: 4900000, guid: bb01143b213e3d24585cec0bc1d0669d, type: 3}
+  - {fileID: 4900000, guid: bb01143b213e3d24585cec0bc1d0669d, type: 3}
   PeopleSprites:
   - {fileID: 21300000, guid: cbf805f49a0a53b4d864942bf926a5e2, type: 3}
   - {fileID: 21300000, guid: 32f9edb4f8e31ae468f4924ec7d00471, type: 3}
