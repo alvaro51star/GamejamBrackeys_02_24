@@ -2523,7 +2523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringingLightGO: {fileID: 1161109821}
-  phoneIntObjScript: {fileID: 1224153927}
   loopAudioSource: {fileID: 1224153931}
 --- !u!114 &1224153927
 MonoBehaviour:
@@ -3568,6 +3567,8 @@ MonoBehaviour:
   peopleNumber: 10
   peopleTypes: 
   peopleIndex: 0
+  currentPeopleIn: 0
+  badPeopleIn: 0
   secondsToNewPerson: 3
   audioSource: {fileID: 1601554162}
   audioClip: {fileID: 8300000, guid: a11e02818f37fba459cb7353d504fa53, type: 3}
@@ -4460,6 +4461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4423bd1b2ec2c714cb5da428a528ac79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_characterNames: []
   JSON: {fileID: 4900000, guid: bbe2622f698d1ec4aa63886209789990, type: 3}
   startDialogueButton: {fileID: 601042151}
 --- !u!4 &2079567528

@@ -7,7 +7,6 @@ public class PhoneFeedback : MonoBehaviour
 {
     private bool recievingCall;//comprobante por si acasp
     [SerializeField] private GameObject ringingLightGO;
-    [SerializeField] private PhoneZoomInteractiveObject phoneIntObjScript;
     [SerializeField] private AudioSource loopAudioSource;
 
     private void Start()
@@ -29,6 +28,7 @@ public class PhoneFeedback : MonoBehaviour
     {
         EventManager.PhoneRinging -= OnPhoneRinging;
         EventManager.Call -= OnCall;
+        EventManager.Call2 -= OnCall2;
         EventManager.Resume -= OnResume;
         EventManager.Pause -= OnPause;
     }
