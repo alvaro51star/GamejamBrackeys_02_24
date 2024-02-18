@@ -110,6 +110,10 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
     public void PauseMenu()
     {
         EventManager.Pause?.Invoke();
