@@ -52,6 +52,7 @@ My name is {characterName}.
 ===selector===
 {
     -preguntasCounter < 3:
+        Tell me, {characterName}...
         ->main
     -else:
         ->decisionFinal
@@ -59,7 +60,6 @@ My name is {characterName}.
 
 ->main
 ===main===
-Tell me, {characterName}...
 *Can you whistle?
 ~preguntasCounter++
 ~opcionesDialogo = RANDOM(1,100)
@@ -132,7 +132,7 @@ No, I've never killed anyone.
 ===P2R3===
 ~temp peopleKilled = RANDOM(5, 31)
 Honestly, yes.
-I killed {peopleKilled} people in the war.
+I've killed {peopleKilled} people since the start of this chaos.
 ->selector
 
 
@@ -143,7 +143,7 @@ Yes, of course. He is our savior and only hope.
 I am an atheist, I have never believed in any God.
 ->selector
 ===P3R3===
-Of course I don't believe in God. If God existed he would not allow this to happen.
+Of course I don't believe in God. If God existed he would not allow this madness to happen.
 ->selector
 
 

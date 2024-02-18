@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
             return m_characterNames[Random.Range(0, m_characterNames.Length)];
         });
         m_currentStory?.BindExternalFunction("getNumberOfTries", () => {
-            UIManager.instance.GetPostItCounter();
+            return UIManager.instance.GetPostItCounter();
         });
         m_currentStory?.BindExternalFunction("getNumberOfBadGuysInside", () => {
             return GameManager.instance.badPeopleIn;

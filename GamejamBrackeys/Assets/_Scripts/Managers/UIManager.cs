@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
     [Header("PostIt")]
     [SerializeField] private TMP_Text postItText;
-    private int m_postItCounter;
+    private int m_postItCounter = 0;
 
     private void Awake() //set singleton 
     {
@@ -112,15 +112,16 @@ public class UIManager : MonoBehaviour
     {
         postItText.text = text;
     }
+
     public int GetPostItCounter()
     {
         return m_postItCounter;
     }
+
     public void ChangePostItCounter(int counter)
     {
         m_postItCounter = counter;
     }
-
 
     //pause menu
     public void Resume()

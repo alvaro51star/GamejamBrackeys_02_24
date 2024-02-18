@@ -52,6 +52,7 @@ My name is {characterName}.
 ===selector===
 {
     -preguntasCounter < 3:
+        Tell me, {characterName}...
         ->main
     -else:
         ->decisionFinal
@@ -59,7 +60,6 @@ My name is {characterName}.
 
 ->main
 ===main===
-Tell me, {characterName}...
 *Can you whistle?
 ~preguntasCounter++
 ~opcionesDialogo = RANDOM(1,100)
@@ -124,7 +124,7 @@ My teeth are too far apart, so when I blow I can't make any noise.
 ->selector
 
 ===P2R1===
-No, I haven't killed anyone.  
+No, I haven't killed anyone yet.  
 ->selector
 ===P2R2===
 ~temp peopleKilled = RANDOM(3, 15)
@@ -133,7 +133,7 @@ I've killed {peopleKilled} times.
 ===P2R3===
 ~temp peopleKilled = RANDOM(5, 31)
 Honestly, yes.
-I killed {peopleKilled} people in the war.
+I've killed {peopleKilled} people since the start of this chaos.
 ->selector
 
 

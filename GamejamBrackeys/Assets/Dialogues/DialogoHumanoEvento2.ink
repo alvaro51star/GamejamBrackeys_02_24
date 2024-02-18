@@ -17,6 +17,7 @@ Nothing personal, just protocol.
 ===selector===
 {
     -preguntasCounter < 2:
+        Tell me, {characterName}...
         ->main
     -else:
         ->decisionFinal
@@ -24,16 +25,18 @@ Nothing personal, just protocol.
 
 ->main
 ===main===
-Tell me, {characterName}...
 *Did you find him?
+~preguntasCounter++
     He was dead... It was the alter... I hope those bastards burn in hell...
     ->selector
 
 *You took too long
+~preguntasCounter++
     He was dead, so I gave him a little funeral... I hope he's in heaven...
     ->selector
     
 *Are you all right?
+~preguntasCounter++
     No... He's dead. If only I had arrived a little earlier I could have saved him...
     Or even taken his place...
     ->selector
