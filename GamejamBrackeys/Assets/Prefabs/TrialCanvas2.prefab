@@ -997,6 +997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitPanel: {fileID: 5915597823881728758}
   answerAudioClip: {fileID: 8300000, guid: 7278f4721a5b4f44d86538699e9beeda, type: 3}
+  phoneLight: {fileID: 0}
 --- !u!1 &4856727324652779777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4027327535753594181
 RectTransform:
   m_ObjectHideFlags: 0

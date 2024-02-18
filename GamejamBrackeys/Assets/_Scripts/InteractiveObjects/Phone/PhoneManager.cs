@@ -6,6 +6,29 @@ public class PhoneManager : MonoBehaviour
 {
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private AudioClip answerAudioClip;
+    [SerializeField] private GameObject phoneLight;
+
+    private void OnEnable()
+    {
+        EventManager.PhoneRinging += OnPhoneRinging;
+        EventManager.Call += OnCall;
+    }
+    private void OnDisable()
+    {
+        EventManager.PhoneRinging -= OnPhoneRinging;
+        EventManager.Call += OnCall;
+    }
+
+    private void OnPhoneRinging()
+    {
+        phoneLight.SetActive(true);
+    }
+
+    private void OnCall()
+    {
+        phoneLight.SetActive(false);
+    }
+
     public void DoorButton()
     {
         Debug.Log("Empezar conversacion con el de fuera");
