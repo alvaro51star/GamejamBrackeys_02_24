@@ -10,6 +10,8 @@ public class VictimsFinalText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = $"{GameManager.instance.badPeopleIn} people have ended up dying because of your decisions";
+        int peopleKilled = GameManager.instance.badPeopleIn * Random.Range(1,5);
+
+        text.text = $"{peopleKilled} people have ended up dying because of your decisions";
     }
 }

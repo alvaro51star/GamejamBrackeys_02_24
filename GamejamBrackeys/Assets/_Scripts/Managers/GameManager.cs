@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
         badPeopleIn++;
     }
 
+    public void BackToMainMenu()
+    {
+        Initiate.Fade("MainMenu", Color.black, 1f);
+    }
+
     public void GameOver(int numberOfAltersIn)
     {
         switch (numberOfAltersIn)

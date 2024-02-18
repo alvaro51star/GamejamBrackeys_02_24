@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
 
         if (!m_dialogueIsPlaying)
             return;
-        if (Input.GetKeyDown(KeyCode.Space) && m_numChoices == 0) //cambiar el input
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return)) && m_numChoices == 0) //cambiar el input
             ContinueDialogue();
 
     }

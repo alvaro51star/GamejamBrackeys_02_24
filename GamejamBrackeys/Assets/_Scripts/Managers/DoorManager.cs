@@ -46,15 +46,22 @@ public class DoorManager : MonoBehaviour
     private void Start()
     {
         GeneratePeople();
+        StartCoroutine(StartGame());
     }
 
     public void SetNewPersonInDoor()
     {
-        if (currentPeopleIn >= 10)
+        if (currentPeopleIn >= peopleNumber)
         {
             GameManager.instance.GameOver(badPeopleIn);
         }
         StartCoroutine(SetNewPerson());
+    }
+
+    private IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(1f);
+        SetNewPersonInDoor();
     }
 
     private IEnumerator SetNewPerson()
