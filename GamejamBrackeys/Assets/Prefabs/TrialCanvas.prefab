@@ -1450,6 +1450,7 @@ GameObject:
   - component: {fileID: 5250567008956052008}
   - component: {fileID: 3398048342972445546}
   - component: {fileID: 8918695659074014704}
+  - component: {fileID: 1174342613470093864}
   m_Layer: 5
   m_Name: TrialCanvas
   m_TagString: Untagged
@@ -1547,6 +1548,24 @@ MonoBehaviour:
   m_logText: {fileID: 5271318721414494268}
   m_choices: []
   m_choiceTexts: []
+  postItText: {fileID: 0}
+--- !u!114 &1174342613470093864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019873973585905524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &2029409518223528414
 GameObject:
   m_ObjectHideFlags: 0
