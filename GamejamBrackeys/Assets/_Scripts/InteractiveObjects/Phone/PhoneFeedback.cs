@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class PhoneFeedback : MonoBehaviour
 {
-    private bool recievingCall;//comprobante por si acasp
+    private bool recievingCall;
     [SerializeField] private GameObject ringingLightGO;
     [SerializeField] private AudioSource loopAudioSource;
-
-    private void Start()
-    {
-        EventManager.PhoneRinging?.Invoke();//provisional, deberia invocarlo la puerta       
-    }
 
     private void OnEnable()
     {
@@ -22,7 +17,6 @@ public class PhoneFeedback : MonoBehaviour
         EventManager.Resume += OnResume;
         EventManager.Pause += OnPause;
     }
-
 
     private void OnDisable()
     {
@@ -35,12 +29,11 @@ public class PhoneFeedback : MonoBehaviour
 
     private void OnPhoneRinging()
     {
-        Debug.Log("Esta sonando el telefono");
         recievingCall = true;
 
         if (recievingCall)
         {
-            ringingLightGO.SetActive(true);//aqui meteriamos la animacion o lo que sea de la luz
+            ringingLightGO.SetActive(true);
             loopAudioSource.Play();
         }
     }
@@ -49,7 +42,7 @@ public class PhoneFeedback : MonoBehaviour
     {
         recievingCall = false;
 
-        ringingLightGO.SetActive(false);//aqui meteriamos la animacion o lo que sea de la luz
+        ringingLightGO.SetActive(false);
         loopAudioSource.Stop();
     }
     private void OnCall2()
