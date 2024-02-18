@@ -249,8 +249,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Thanks to your good judgment, you have ensured that there are no unnecessary
-    casualties. The bombing has left no casualties beyond those who ignored the warning
-    to flee to shelters. '
+    casualties. The bombing only managed to kill those who ignored the warning to
+    flee to shelters. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d129e5fef9161c64388a8f9afc213b2b, type: 2}
   m_sharedMaterial: {fileID: -2552790805254515287, guid: d129e5fef9161c64388a8f9afc213b2b, type: 2}

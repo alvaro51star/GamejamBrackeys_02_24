@@ -41,7 +41,7 @@ Understand?
         What, you think I'm one of those beasts?
         Unbelievable. I'll prove you otherwise.
     -whineLine>64 && whineLine<=80:
-        Uhm... Okay, but quick, it's noot safe out here.
+        Uhm... Okay, but quick, it's not safe out here.
     -else:
         Yeah, yeah, whatever. Let's get this over with.
 }
@@ -77,9 +77,9 @@ Have you ever killed anyone? If so, how many?
     ~preguntasCounter++
     ~opcionesDialogo = RANDOM(1,100)
     {
-        -opcionesDialogo>0 && opcionesDialogo<=10:
+        -opcionesDialogo>0 && opcionesDialogo<=20:
             ->P2R1
-        -opcionesDialogo>10 && opcionesDialogo<=60:
+        -opcionesDialogo>20 && opcionesDialogo<=60:
             ->P2R2
         -else:
             ->P2R3
@@ -102,9 +102,9 @@ Would you be willing to sacrifice yourself for the good of the bunker if necessa
     ~preguntasCounter++
     ~opcionesDialogo = RANDOM(1,100)
     {
-        -opcionesDialogo>0 && opcionesDialogo<=30:
+        -opcionesDialogo>0 && opcionesDialogo<=40:
             ->P4R1
-        -opcionesDialogo>30 && opcionesDialogo<=80:
+        -opcionesDialogo>40 && opcionesDialogo<=80:
             ->P4R2
         -else:
             ->P4R3
@@ -124,7 +124,7 @@ My teeth are too far apart, so when I blow I can't make any noise.
 ->selector
 
 ===P2R1===
-No, I haven't killed anyone.  
+Honestly, I've never killed anyone.
 ->selector
 ===P2R2===
 ~temp peopleKilled = RANDOM(3, 15)
@@ -138,7 +138,7 @@ I've killed {peopleKilled} people since the start of this chaos.
 
 
 ===P3R1===
-Are there still people who believe in an all-powerful deity capable of protecting people from all evils?
+Are there still people who believe in an all-powerful deity capable of protecting people from all evil?
 Heh... How ridiculous  
 ->selector
 ===P3R2===

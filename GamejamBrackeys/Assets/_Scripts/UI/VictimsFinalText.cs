@@ -13,6 +13,6 @@ public class VictimsFinalText : MonoBehaviour
         int peopleKilled = GameManager.instance.badPeopleIn * Random.Range(2,5);
         
         //text.text = $"{peopleKilled} people have ended up dying because of your decisions";
-        text.text = $"You left {GameManager.instance.goodPeopleOut} outside the bunker and you let {GameManager.instance.badPeopleIn} Alters inside the bunker, causing in total {peopleKilled + GameManager.instance.goodPeopleOut} deaths";
+        text.text = $"You left {GameManager.instance.goodPeopleOut} humans outside the bunker and you let {GameManager.instance.badPeopleIn} Alters come inside, causing a total of {peopleKilled + GameManager.instance.goodPeopleOut} deaths";
     }
 }

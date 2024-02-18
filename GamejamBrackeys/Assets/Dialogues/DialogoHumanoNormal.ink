@@ -41,7 +41,7 @@ Understand?
         What, you think I'm one of those beasts?
         Unbelievable. I'll prove you otherwise.
     -whineLine>64 && whineLine<=80:
-        Uhm... Okay, but quick, it's noot safe out here.
+        Uhm... Okay, but quick, it's not safe out here.
     -else:
         Yeah, yeah, whatever. Let's get this over with.
 }
