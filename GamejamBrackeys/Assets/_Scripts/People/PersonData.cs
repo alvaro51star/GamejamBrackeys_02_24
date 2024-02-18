@@ -7,4 +7,5 @@ public class PersonData
     public PeopleType _personType;
     public TextAsset _dialogueText;
     public Sprite _sprite;
+    public Sprite _portraitSprite;
 }

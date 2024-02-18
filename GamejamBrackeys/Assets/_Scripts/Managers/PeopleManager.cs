@@ -12,6 +12,7 @@ public class PeopleManager : MonoBehaviour
     [SerializeField] private List<TextAsset> BadDialogues;
 
     [SerializeField] private List<Sprite> PeopleSprites;
+    [SerializeField] private List<Sprite> PortraitSprites;
 
     //[SerializeField] private List<string> names;
 
@@ -60,7 +61,9 @@ public class PeopleManager : MonoBehaviour
         }
         index = Random.Range(0, PeopleSprites.Count);
         personData._sprite = PeopleSprites[index];
+        personData._portraitSprite = PortraitSprites[index];
         PeopleSprites.RemoveAt(index);
+        PortraitSprites.RemoveAt(index);
         //Le pone imagen random
         return personData;
     }
