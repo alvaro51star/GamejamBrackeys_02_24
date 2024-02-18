@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(instance);
     }
 
+    public void AddBadPeople()
+    {
+        badPeopleIn++;
+    }
+
     public void GameOver(int numberOfAltersIn)
     {
         switch (numberOfAltersIn)

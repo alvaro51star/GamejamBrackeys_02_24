@@ -109,7 +109,7 @@ public class DoorManager : MonoBehaviour
             if (personAtTheDoor._personType == PeopleType.Bad)
             {
                 badPeopleIn++;
-                GameManager.instance.badPeopleIn = badPeopleIn;
+                GameManager.instance.AddBadPeople();
             }
             //La puerta se debe abrir dejando pasar al pavo
             //animacion puerta
@@ -123,7 +123,7 @@ public class DoorManager : MonoBehaviour
             if (personAtTheDoor._personType == PeopleType.Good)
             {
                 badPeopleIn++;
-                GameManager.instance.badPeopleIn = badPeopleIn;
+                GameManager.instance.AddBadPeople();
             }
             StartCoroutine(CloseDoorViewFeedbacks());
             Invoke(nameof(SetNewPersonInDoor), 0.5f);
