@@ -89,6 +89,7 @@ public class DialogueManager : MonoBehaviour
         UIManager.instance.DialogueSwitchMode(false);
         UIManager.instance.DialogueChangeText("");
         DoorManager.instance.EndDialogue();
+        EventManager.CallEnded?.Invoke();
     }
 
     private void ContinueDialogue()
@@ -122,7 +123,6 @@ public class DialogueManager : MonoBehaviour
         int choicesLength = UIManager.instance.GetChoicesLength();
         for (int j = index; j < choicesLength; j++)
         {
-            Debug.Log("Jaja");
             UIManager.instance.SwitchActiveChoices(false, j);
         }
     }

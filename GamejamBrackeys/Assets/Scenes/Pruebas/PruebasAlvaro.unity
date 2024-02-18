@@ -3138,17 +3138,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoodDialogues:
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
   BadDialogues:
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
-  - {fileID: 4900000, guid: a396a7f9715cee044bd808d52fc91869, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
+  - {fileID: 4900000, guid: 9a80dbf8314e2fc46b0e13002c070849, type: 3}
   PeopleSprites:
   - {fileID: 21300000, guid: cbf805f49a0a53b4d864942bf926a5e2, type: 3}
   - {fileID: 21300000, guid: 32f9edb4f8e31ae468f4924ec7d00471, type: 3}
