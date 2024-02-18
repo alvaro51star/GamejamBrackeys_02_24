@@ -14,12 +14,12 @@ public class PhoneManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.PhoneRinging += OnPhoneRinging;
-        EventManager.CallEnded += OnCallEnded;
+        EventManager.Call += OnCall;
     }
     private void OnDisable()
     {
         EventManager.PhoneRinging -= OnPhoneRinging;
-        EventManager.CallEnded -= OnCallEnded;
+        EventManager.Call -= OnCall;
     }
 
     private void OnPhoneRinging()
@@ -29,7 +29,7 @@ public class PhoneManager : MonoBehaviour
         doorButton.enabled = true;
     }
 
-    private void OnCallEnded()
+    private void OnCall()
     {
         phoneLight.SetActive(false);
         buttonLight.SetActive(false);
