@@ -1,10 +1,10 @@
 EXTERNAL getName()
 VAR characterName = ""
+~characterName = getName()
 VAR opcionesDialogo = 0
 VAR preguntasCounter = 0
 
 ->Introductions
-~characterName = getName()
 ===Introductions===
 <i>That face seems familiar.</i>
 Hello... I'm back... I'm {characterName}, the one who went out to look for my father...
@@ -24,6 +24,7 @@ Nothing personal, just protocol.
 
 ->main
 ===main===
+Tell me, {characterName}...
 *Did you find him?
     He was dead... It was the alter... I'm going to kill them all to avenge him.
     ->selector

@@ -1,10 +1,10 @@
 EXTERNAL getName()
 VAR characterName = ""
+~characterName = getName()
 VAR opcionesDialogo = 0
 VAR preguntasCounter = 0
 
 ->Introductions
-~characterName = getName()
 ===Introductions===
 <i>Here we go again.</i>
 ~temp introLine = RANDOM(1,96)
@@ -48,8 +48,6 @@ Understand?
 
 My name is {characterName}.
 
-Ok, {characterName}. Tell me...
-
 ->selector
 ===selector===
 {
@@ -61,6 +59,7 @@ Ok, {characterName}. Tell me...
 
 ->main
 ===main===
+Tell me, {characterName}...
 *Can you whistle?
 ~preguntasCounter++
 ~opcionesDialogo = RANDOM(1,100)

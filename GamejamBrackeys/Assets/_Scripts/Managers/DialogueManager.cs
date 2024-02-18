@@ -4,6 +4,12 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
 
+
+public enum DialogueOrigin
+{
+    Puerta, Telefonillo
+}
+
 public class DialogueManager : MonoBehaviour
 {
     //Variables
@@ -20,10 +26,11 @@ public class DialogueManager : MonoBehaviour
     private const string LETTHROUGH_TAG = "pasar";
     private const string POSTIT_TAG = "postIt";
     private const string PLUSTRIES_TAG = "plusTries";
+    private const string SPEAKER_TAG = "plusTries";
 
 
     //Trial
-    public TextAsset JSON;
+    public TextAsset m_telefonilloDialogo;
 
     private void Awake()
     {
@@ -48,10 +55,17 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void EnterDialogueMode()
+    public void EnterDialogueMode(bool isPuerta)
     {
-
-        m_currentStory = new Story(DoorManager.instance.personAtTheDoor._dialogueText.text);
+        if (isPuerta)
+        {
+            m_currentStory = new Story(DoorManager.instance.personAtTheDoor._dialogueText.text);
+            DoorManager.instance.StartDialogue();
+        }
+        else
+        {
+            m_currentStory = new Story(m_telefonilloDialogo.text);
+        }
         m_currentStory?.BindExternalFunction("getName", () => {
             return m_characterNames[Random.Range(0, m_characterNames.Length)];
         });
@@ -64,7 +78,6 @@ public class DialogueManager : MonoBehaviour
         m_dialogueIsPlaying = true;
         UIManager.instance.DialogueSwitchMode(true);
         //FeedbacksPuerta
-        DoorManager.instance.StartDialogue();
 
         ContinueDialogue();
     }
@@ -72,6 +85,8 @@ public class DialogueManager : MonoBehaviour
     public void ExitDialogueMode()
     {
         m_currentStory.UnbindExternalFunction("getName");
+        m_currentStory.UnbindExternalFunction("getNumberOfTries");
+        m_currentStory.UnbindExternalFunction("getNumberOfBadGuysInside");
         m_dialogueIsPlaying = false;
         UIManager.instance.DialogueSwitchMode(false);
         UIManager.instance.DialogueChangeText("");
@@ -148,6 +163,8 @@ public class DialogueManager : MonoBehaviour
                 case PLUSTRIES_TAG:
                     EventManager.Call2?.Invoke();
                     break;
+                //case SPEAKER_TAG:
+
             }
         }
     }
