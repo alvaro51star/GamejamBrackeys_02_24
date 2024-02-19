@@ -15,14 +15,20 @@ public class UIManager : MonoBehaviour
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject m_dialoguePanel;
+    [SerializeField] private Image m_dialogueImage;
+    [SerializeField] private TextMeshProUGUI m_charName;
     [SerializeField] private TextMeshProUGUI m_dialogueText;
     [SerializeField] private TextMeshProUGUI m_logText;
 
-    [Header("CHoices UI")]
+    [Header("Telefonillo UI")]
+    [SerializeField] private GameObject m_telefonilloPanel;
+    [SerializeField] private TextMeshProUGUI m_telefonilloText;
+
+    [Header("Choices UI")]
     [SerializeField] private GameObject[] m_choices;
     [SerializeField] private TextMeshProUGUI[] m_choiceTexts;
 
-    [Header("PostIt")]
+    [Header("PostIt UI")]
     [SerializeField] private TMP_Text postItText;
     private int m_postItCounter = 0;
 
@@ -44,14 +50,48 @@ public class UIManager : MonoBehaviour
 
     #region Dialogue
 
-    public void DialogueSwitchMode(bool mode)
+    public void DialogueSwitchMode(bool mode, bool isPuerta)
     {
-        m_dialoguePanel.SetActive(mode);
+        if (mode)
+        {
+            if (isPuerta)
+            {
+                m_dialoguePanel.SetActive(mode);
+                m_telefonilloPanel.SetActive(!mode);
+            }
+            else
+            {
+                m_telefonilloPanel.SetActive(mode);
+                m_dialoguePanel.SetActive(!mode);
+            }
+        }
+        else
+        {
+                m_dialoguePanel.SetActive(mode);
+                m_telefonilloPanel.SetActive(mode);
+        }
     }
 
-    public void DialogueChangeText(string text)
+    public void DialogueChangeText(string text, bool isPuerta)
     {
-        m_dialogueText.text = text;
+        if (isPuerta)
+        {
+            m_dialogueText.text = text;
+        }
+        else
+        {
+            m_telefonilloText.text = text;
+        }
+    }
+
+    public void DialogueChangeImage(Sprite sprite)
+    {
+        m_dialogueImage.sprite = sprite;
+    }
+
+    public void DialogueChangeCharacterName(string name)
+    {
+        m_charName.text = name;
     }
 
     public void LogChat(string text)

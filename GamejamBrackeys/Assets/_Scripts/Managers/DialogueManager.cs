@@ -26,8 +26,9 @@ public class DialogueManager : MonoBehaviour
     //Constants
     private const string LETTHROUGH_TAG = "pasar";
     private const string POSTIT_TAG = "postIt";
-    private const string PLUSTRIES_TAG = "plusTries";
-    private const string SPEAKER_TAG = "plusTries";
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+
 
 
     //Trial
@@ -78,7 +79,7 @@ public class DialogueManager : MonoBehaviour
             return GameManager.instance.badPeopleIn;
         });
         m_dialogueIsPlaying = true;
-        UIManager.instance.DialogueSwitchMode(true);
+        UIManager.instance.DialogueSwitchMode(true, m_isPuerta);
         //FeedbacksPuerta
 
         ContinueDialogue();
@@ -90,8 +91,8 @@ public class DialogueManager : MonoBehaviour
         m_currentStory.UnbindExternalFunction("getNumberOfTries");
         m_currentStory.UnbindExternalFunction("getNumberOfBadGuysInside");
         m_dialogueIsPlaying = false;
-        UIManager.instance.DialogueSwitchMode(false);
-        UIManager.instance.DialogueChangeText("");
+        UIManager.instance.DialogueSwitchMode(false, m_isPuerta);
+        UIManager.instance.DialogueChangeText("", m_isPuerta);
         EventManager.CallEnded?.Invoke();
         if (m_isPuerta)
         {
@@ -107,7 +108,7 @@ public class DialogueManager : MonoBehaviour
             CheckChoices();
             HandleTags(m_currentStory.currentTags);
             m_logManager.AddText(nextDialogue);
-            UIManager.instance.DialogueChangeText(nextDialogue);
+            UIManager.instance.DialogueChangeText(nextDialogue, m_isPuerta);
             UIManager.instance.LogChat(m_logManager.GetLogText());
         }
         else
@@ -165,10 +166,20 @@ public class DialogueManager : MonoBehaviour
                 case POSTIT_TAG:
                     UIManager.instance.ChangePostItText(tagValue);
                     break;
-                //case PLUSTRIES_TAG:
-                //    EventManager.Call2?.Invoke();
-                //    break;
-                //case SPEAKER_TAG:
+                case SPEAKER_TAG:
+                    Debug.Log("Nombre del perosnaje: "+tagValue);
+                    UIManager.instance.DialogueChangeCharacterName(tagValue);
+                    break;
+                case PORTRAIT_TAG:
+                    if (tagValue == "you")
+                    {
+                        UIManager.instance.DialogueChangeImage(null);
+                    }
+                    else if (tagValue == "otherPerson")
+                    {
+                        UIManager.instance.DialogueChangeImage(DoorManager.instance.personAtTheDoor._portraitSprite);
+                    }
+                        break;
 
             }
         }
