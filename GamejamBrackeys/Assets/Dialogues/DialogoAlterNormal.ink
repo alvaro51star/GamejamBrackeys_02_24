@@ -72,8 +72,8 @@ My name is {characterName}.
         ->P1R3
 }
 
-*[Have you ever killed anyone?] #speaker:you #portrait:you
-Have you ever killed anyone? If so, how many?
+*[Have you ever killed anyone?]
+Have you ever killed anyone? If so, how many?#speaker:you #portrait:you
     ~preguntasCounter++
     ~opcionesDialogo = RANDOM(1,100)
     {
@@ -97,8 +97,8 @@ Have you ever killed anyone? If so, how many?
             ->P3R3
     }
 
-*[Would sacrifice yourself?] #speaker:you #portrait:you
-Would you be willing to sacrifice yourself for the good of the bunker if necessary?
+*[Would sacrifice yourself?]
+Would you be willing to sacrifice yourself for the good of the bunker if necessary?#speaker:you #portrait:you
     ~preguntasCounter++
     ~opcionesDialogo = RANDOM(1,100)
     {
