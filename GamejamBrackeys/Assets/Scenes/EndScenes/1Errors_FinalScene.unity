@@ -453,6 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 949736943}
+  bottomText: {fileID: 482759524}
 --- !u!114 &949736943
 MonoBehaviour:
   m_ObjectHideFlags: 0
