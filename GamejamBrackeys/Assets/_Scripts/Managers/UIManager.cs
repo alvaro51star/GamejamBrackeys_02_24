@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     [Header("Telefonillo UI")]
     [SerializeField] private GameObject m_telefonilloPanel;
     [SerializeField] private TextMeshProUGUI m_telefonilloText;
+    [SerializeField] private GameObject m_telefono;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] m_choices;
@@ -92,6 +93,11 @@ public class UIManager : MonoBehaviour
     public void DialogueChangeCharacterName(string name)
     {
         m_charName.text = name;
+    }
+
+    public void SwitchActiveTelefono(bool mode)
+    {
+        m_telefono.SetActive(mode);
     }
 
     public void LogChat(string text)

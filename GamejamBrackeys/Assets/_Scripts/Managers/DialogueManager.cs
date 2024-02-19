@@ -20,14 +20,18 @@ public class DialogueManager : MonoBehaviour
     private LogManager m_logManager;
     private int m_numChoices;
     private bool m_isPuerta;
+    public bool m_isViewClear = true;
+    private bool m_canContinueDialogue;
 
     [SerializeField] private string[] m_characterNames;
+    [SerializeField] private Sprite m_protagonistSprite;
 
     //Constants
     private const string LETTHROUGH_TAG = "pasar";
     private const string POSTIT_TAG = "postIt";
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
+    private const string TELEFONO_TAG = "telefono";
 
 
 
@@ -52,9 +56,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (!m_dialogueIsPlaying)
             return;
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return)) && m_numChoices == 0) //cambiar el input
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return)) && m_numChoices == 0 && m_isViewClear) //&& m_isViewClear
             ContinueDialogue();
-
     }
 
     public void EnterDialogueMode(bool isPuerta)
@@ -173,13 +176,23 @@ public class DialogueManager : MonoBehaviour
                 case PORTRAIT_TAG:
                     if (tagValue == "you")
                     {
-                        UIManager.instance.DialogueChangeImage(null);
+                        UIManager.instance.DialogueChangeImage(m_protagonistSprite);
                     }
                     else if (tagValue == "otherPerson")
                     {
                         UIManager.instance.DialogueChangeImage(DoorManager.instance.personAtTheDoor._portraitSprite);
                     }
                         break;
+                case TELEFONO_TAG:
+                    if (tagValue == "yes")
+                    {
+                        UIManager.instance.SwitchActiveTelefono(true);
+                    }
+                    else if (tagValue == "no")
+                    {
+                        UIManager.instance.SwitchActiveTelefono(false);
+                    }
+                    break;
 
             }
         }

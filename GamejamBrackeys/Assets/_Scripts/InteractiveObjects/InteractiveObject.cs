@@ -23,7 +23,7 @@ public class InteractiveObject : MonoBehaviour, IEventClick
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        //DialogueManager.instance.m_isViewClear = false;
     }
 
     public void OnPointerExit(PointerEventData eventData)
