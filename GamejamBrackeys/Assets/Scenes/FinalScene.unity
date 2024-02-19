@@ -2245,6 +2245,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: a11e02818f37fba459cb7353d504fa53, type: 3}
   doorOpen: {fileID: 8300000, guid: dc8a501c963fc084a83a0f55849434ef, type: 3}
   doorClose: {fileID: 8300000, guid: 797f3e54b6b341848865994c5ec4a7ad, type: 3}
+  doorViewSound: {fileID: 8300000, guid: 8ddf8f946dce83447937141e79ae9a35, type: 3}
   doorLight: {fileID: 904835618}
   doorView: {fileID: 1606800523}
   doorKnob: {fileID: 1272580220}
