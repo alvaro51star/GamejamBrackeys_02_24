@@ -2361,7 +2361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   badPeople: 4
   isAccepted: 0
-  peopleNumber: 5
+  peopleNumber: 10
   peopleTypes: 
   peopleIndex: 0
   currentPeopleIn: 0
