@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
@@ -34,6 +35,7 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private AudioClip doorOpen, doorClose;
+    [SerializeField] private AudioClip doorViewSound;
     [SerializeField] private GameObject doorLight, doorView, doorKnob;
     [Space]
     [SerializeField] private Transform initialDoorShadowPosition, finalDoorShadowPosition;
@@ -158,6 +160,7 @@ public class DoorManager : MonoBehaviour
     {
         //TODO Reproducir audio
         doorView.transform.DOMove(finalDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
+        audioSource.PlayOneShot(doorViewSound);
         yield return null;
     }
 
@@ -174,6 +177,7 @@ public class DoorManager : MonoBehaviour
     {
         //TODO reproducir audio
         doorView.transform.DOMove(initialDoorViewPosition.position, 0.5f).SetEase(Ease.InSine);
+        audioSource.PlayOneShot(doorViewSound);
         yield return new WaitForSeconds(0.5f);
         //Aqui tambien va audio de pasos cuando se va
         doorLight.SetActive(false);
