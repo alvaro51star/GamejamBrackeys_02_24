@@ -119,8 +119,8 @@ I prefer not to try. #speaker:{characterName} #portrait:otherPerson
 I don't know how to whistle. #speaker:{characterName} #portrait:otherPerson
 ->selector
 ===P1R3===
-I can't whistle.
-My teeth are too far apart, so when I blow I can't make any noise. #speaker:{characterName} #portrait:otherPerson
+I can't whistle.#speaker:{characterName} #portrait:otherPerson
+My teeth are too far apart, so when I blow I can't make any noise. 
 ->selector
 
 ===P2R1===
@@ -156,8 +156,8 @@ No. My life comes before the lifes of others. #speaker:{characterName} #portrait
 Of course not! I want to enter the bunker to survive, not to sacrifice myself! #speaker:{characterName} #portrait:otherPerson
 ->selector
 ===P4R3===
-A human should always be able to sacrifice himself for the community if necessary.
-Otherwise we would just be selfish beasts. #speaker:{characterName} #portrait:otherPerson
+A human should always be able to sacrifice himself for the community if necessary.#speaker:{characterName} #portrait:otherPerson
+Otherwise we would just be selfish beasts. 
 
 ->selector
 

@@ -112,7 +112,7 @@ public class DialogueManager : MonoBehaviour
             HandleTags(m_currentStory.currentTags);
             m_logManager.AddText(nextDialogue);
             UIManager.instance.DialogueChangeText(nextDialogue, m_isPuerta);
-            UIManager.instance.LogChat(m_logManager.GetLogText());
+            //UIManager.instance.LogChat(m_logManager.GetLogText());
         }
         else
             ExitDialogueMode();

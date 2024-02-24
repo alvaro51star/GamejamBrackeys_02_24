@@ -100,10 +100,10 @@ public class UIManager : MonoBehaviour
         m_telefono.SetActive(mode);
     }
 
-    public void LogChat(string text)
-    {
-        m_logText.text = text;
-    }
+    //public void LogChat(string text)
+    //{
+    //    m_logText.text = text;
+    //}
 
     
     //Choices

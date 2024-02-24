@@ -45,8 +45,8 @@ Understand?
     -else:
         Yeah, yeah, whatever. Let's get this over with. #speaker:??? #portrait:otherPerson
 }
-#speaker:{characterName} #portrait:otherPerson
-My name is {characterName}.
+
+My name is {characterName}.#speaker:{characterName} #portrait:otherPerson
 
 ->selector
 ===selector===
@@ -119,8 +119,8 @@ Like this? <i>Whistles</i> #speaker:{characterName} #portrait:otherPerson
 It's a little embarrassing... But I don't know how to whistle. #speaker:{characterName} #portrait:otherPerson
 ->selector
 ===P1R3===
-I can't whistle.
-My teeth are too far apart, so when I blow I can't make any noise. #speaker:{characterName} #portrait:otherPerson
+I can't whistle. #speaker:{characterName} #portrait:otherPerson
+My teeth are too far apart, so when I blow I can't make any noise.
 ->selector
 
 ===P2R1===
