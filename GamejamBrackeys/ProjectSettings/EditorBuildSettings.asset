@@ -10,17 +10,20 @@ EditorBuildSettings:
     guid: f3c0456a91885d3419fd59ea007dad93
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
+    guid: 2ffe084547d10ec4694a97b4a40e47e7
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/EndScenes/0Errors_FinalScene.unity
     guid: 074e0e3c54cde8f43916690a0a881e42
   - enabled: 1
     path: Assets/Scenes/EndScenes/1Errors_FinalScene.unity
-    guid: 9d6fdd243a817b94096e8ac597decff4
+    guid: 8a0177649c23ea048b03704244f9e170
   - enabled: 1
     path: Assets/Scenes/EndScenes/2Errors_FinalScene.unity
-    guid: 859f9b68ffa9fb94c88aebc34dfebe55
+    guid: 87fab8422293d764abe9d0df0f11dbf4
   - enabled: 1
     path: Assets/Scenes/EndScenes/Failed_FinalScene.unity
-    guid: b309badc0bfdc5f4fadce65a4df14f31
+    guid: f8e73e443d1aa134a9794815e6f9a6af
   m_configObjects: {}
