@@ -23,7 +23,6 @@ public class PostItCounter : MonoBehaviour
     private void OnCall2()
     {
         counter++;
-        Debug.Log("Counter post it: "+ counter);
         UIManager.instance.ChangePostItCounter(counter);
         if(counter == 1)
         {

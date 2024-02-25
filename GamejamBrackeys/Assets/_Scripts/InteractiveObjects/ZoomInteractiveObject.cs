@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ZoomInteractiveObject : InteractiveObject
 {
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] protected GameObject m_UIObject;
     protected override void Action()
     {
         m_UIObject.SetActive(true);
+        audioSource.Play();
     }
 }
