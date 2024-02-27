@@ -21,7 +21,6 @@ public class DialogueManager : MonoBehaviour
     private int m_numChoices;
     private bool m_isPuerta;
     public bool m_isViewClear = true;
-    private bool m_canContinueDialogue;
 
     [SerializeField] private string[] m_characterNames;
     [SerializeField] private Sprite m_protagonistSprite;
@@ -85,6 +84,7 @@ public class DialogueManager : MonoBehaviour
         UIManager.instance.DialogueSwitchMode(true, m_isPuerta);
         //FeedbacksPuerta
 
+        m_isViewClear = true;
         ContinueDialogue();
     }
 
@@ -196,6 +196,18 @@ public class DialogueManager : MonoBehaviour
 
             }
         }
+    }
+
+    public void ChangeIsViewClear(bool mode)
+    {
+        StartCoroutine(CoroutineChangeIsViewClear(mode));
+    }
+    public IEnumerator CoroutineChangeIsViewClear(bool mode)
+    {
+        yield return new WaitForSeconds(0.3f);
+        Debug.Log("Corutina");
+        m_isViewClear = mode;
+
     }
 
 }

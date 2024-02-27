@@ -28,7 +28,7 @@ public class InteractiveObject : MonoBehaviour, IEventClick
 
     public void OnPointerExit(PointerEventData eventData)
     {
-
+        //DialogueManager.instance.m_isViewClear = true;
     }
 
     protected virtual void Action()

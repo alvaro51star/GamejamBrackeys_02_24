@@ -8,6 +8,7 @@ public class ZoomInteractiveObject : InteractiveObject
     [SerializeField] protected GameObject m_UIObject;
     protected override void Action()
     {
+        DialogueManager.instance.m_isViewClear = false;
         m_UIObject.SetActive(true);
         audioSource.Play();
     }
